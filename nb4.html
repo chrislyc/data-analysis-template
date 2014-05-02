@@ -1838,21 +1838,25 @@ pdflatex NB4_report.tex</code></pre>
 <p>Cite the source of the data and any other references that you used in carrying out your project.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h2>
-<p>List the team members contributing to this notebook, along with their responsabilities:</p>
-<ul>
-<li>team member 1 <strong>name</strong>: team member 1 <strong>responsabilities</strong></li>
-<li>team member 2 <strong>name</strong>: team member 2 <strong>responsabilities</strong></li>
-<li>etc.</li>
-</ul>
-<p>I advise you to work at least in pairs for each project notebook, as you did for the homework assignments. Of course, all team members may participate to each notebook.</p>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Motivations">Motivations<a class="anchor-link" href="#Motivations">&#182;</a></h2>
+<h2 id="Problems">Problems<a class="anchor-link" href="#Problems">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Our analysis of campus security data through 2010-2012 is based on raw data from the U.S. Department of Education. The main question we will address is the relationship between various campus crimes and factors like institution location, sector, sex ratios, etc. More specific, we did a case study on eight main campuses of University of California to explore difference of campus security.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Data-Source">Data Source<a class="anchor-link" href="#Data-Source">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The U.S. Department of Education provides raw campus security data through 2010-2012 in excel files on its website and change the excel files to .csv. Each dataset contains over 10,000 postsecondary institutions with information about different types of crime and also information regarding the intuitions such as private/public, gender ratio and geographical location. For our interest, we choose the specific file about &quot;on-campus crime&quot; to focus on. The data provided by government website are comprehensive enough, but there are some minor typos that we need to fix when loading the data.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Main-challenge">Main challenge<a class="anchor-link" href="#Main-challenge">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>One of the major difficulties is that the file contains counts for various types of crimes. However, our analysis needs a single measure for the overall safety level of institutions. To solve the problem, we came up with a &quot;crime index&quot; to carry on further analysis. The other difficult part of this project should be the visualization for the relationship between location (zip code) and crime. The use of &quot;maps&quot; package helps us locate the crime data into each state.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
