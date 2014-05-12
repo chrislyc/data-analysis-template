@@ -2659,15 +2659,8 @@ IGCKGAiYIgYCpoiBgCliIGCKGAiYIgbyfxWBFEb7XDbkAAAAAElFTkSuQmCC
 &lt;p&gt;Schools in California are found with lowest crime rates. Schools in Missouri are found with highest crime rates. Policy differences needs further investigations to better improve campus security countrywide.&lt;/p&gt;
 &lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Analysis</title><link href="http://chrislyc.github.io/data-analysis-template/nb3.html" rel="alternate"></link><updated>2014-03-03T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:chrislyc.github.io,2014-03-03:data-analysis-template/nb3.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Data-Analysis-and-Visualization"&gt;Data Analysis and Visualization&lt;a class="anchor-link" href="#Data-Analysis-and-Visualization"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
-&lt;/div&gt;
-
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In this notebook, we will perform clustering analysis on the on-campus crime data.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="team-members-responsible-for-this-notebook"&gt;Team members responsible for this notebook:&lt;/h3&gt;
-&lt;p&gt;We did all the work as a team without specific division of resposibility.&lt;/p&gt;
+&lt;h2 id="team-members-responsible-for-this-notebook"&gt;Team members responsible for this notebook:&lt;/h2&gt;
+&lt;p&gt;In this notebook, we will perform clustering analysis on the on-campus crime data. We did all the work as a team without specific division of resposibility.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Read-cleaned-data"&gt;Read cleaned data&lt;a class="anchor-link" href="#Read-cleaned-data"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
@@ -24461,15 +24454,8 @@ ggUAMBMsAICZYAEAzAQLAGAmWAAAM8ECAJgJFgDATLAAAGYB8vIIEq9vrzQAAAAASUVORK5CYII=
 &lt;p&gt;For the year 2012, it is similar to 2010. Universities in California still did the best job. We can see that on-campus crime is not only correlated to the security level but also dependent on universities' security. So the map just shows the crime ratio for schools, it might not be the same as crime ratio for states in general.&lt;/p&gt;
 &lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Cleaning</title><link href="http://chrislyc.github.io/data-analysis-template/nb2.html" rel="alternate"></link><updated>2014-03-02T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:chrislyc.github.io,2014-03-02:data-analysis-template/nb2.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Data-Cleaning"&gt;Data Cleaning&lt;a class="anchor-link" href="#Data-Cleaning"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
-&lt;/div&gt;
-
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In this notebook, we load our raw data into R. Then we clean missing values and check for outliers.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="team-members-responsible-for-this-notebook"&gt;Team members responsible for this notebook:&lt;/h3&gt;
-&lt;p&gt;We did all the work as a team without specific division of resposibility.&lt;/p&gt;
+&lt;h2 id="team-members-responsible-for-this-notebook"&gt;Team members responsible for this notebook:&lt;/h2&gt;
+&lt;p&gt;In this notebook, we load our raw data into R. Then we clean missing values and check for outliers. We did all the work as a team without specific division of resposibility.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Loading-data"&gt;Loading data&lt;a class="anchor-link" href="#Loading-data"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
@@ -26964,15 +26950,8 @@ In&amp;nbsp;[34]:
 
 &lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Gathering</title><link href="http://chrislyc.github.io/data-analysis-template/nb1.html" rel="alternate"></link><updated>2014-03-01T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:chrislyc.github.io,2014-03-01:data-analysis-template/nb1.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Data-Gathering"&gt;Data Gathering&lt;a class="anchor-link" href="#Data-Gathering"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
-&lt;/div&gt;
-
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In this notebook, we will download our data from US department of education and load the excel format data into python. Then we write out our data as .csv format.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="team-members-responsible-for-this-notebook"&gt;Team members responsible for this notebook:&lt;/h3&gt;
-&lt;p&gt;We did all the work as a team without specific division of resposibility.&lt;/p&gt;
+&lt;h2 id="team-members-responsible-for-this-notebook"&gt;Team members responsible for this notebook:&lt;/h2&gt;
+&lt;p&gt;In this notebook, we will download our data from US department of education and load the excel format data into python. Then we write out our data as .csv format. We did all the work as a team without specific division of resposibility.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="creating-the-directory-structure"&gt;Creating the directory structure&lt;/h3&gt;
