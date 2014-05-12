@@ -1720,7 +1720,7 @@ init_mathjax();
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Data Gathering"/>
             <meta property="og:url" content="http://chrislyc.github.io/data-analysis-template/nb1.html"/>
-            <meta property="og:description" content="Data Gathering¶ In this notebook, you'll create the directory structure for your project download the raw data for your project write functions and classes to transform raw data (e.g in XML, jason, etc.) into data frames explain what your are doing Team members responsible for this notebook: List ..."/>
+            <meta property="og:description" content="Data Gathering¶ In this notebook, we will download our data from US department of education and load the excel format data into python. Then we write out our data as .csv format. Team members responsible for this notebook: We did all the work as a team without specific division of ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://chrislyc.github.io/data-analysis-template/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1819,56 +1819,11 @@ Data Analysis Project            </a>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook, you'll</p>
-<ul>
-<li>create the directory structure for your project</li>
-<li>download the raw data for your project</li>
-<li><strong>write functions and classes to transform raw data (e.g in XML, jason, etc.) into data frames</strong></li>
-<li>explain what your are doing</li>
-</ul>
+<p>In this notebook, we will download our data from US department of education and load the excel format data into python. Then we write out our data as .csv format.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h2>
-<p>List the team members contributing to this notebook, along with their responsabilities:</p>
-<ul>
-<li>team member 1 <strong>name</strong>: team member 1 <strong>responsabilities</strong></li>
-<li>team member 2 <strong>name</strong>: team member 2 <strong>responsabilities</strong></li>
-<li>etc.</li>
-</ul>
-<p>I advise you to work at least in pairs for each project notebook, as you did for the homework assignments. Of course, all team members may participate to each notebook.</p>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="instructions">Instructions:</h2>
-<p>In <strong>markdown cells</strong>, you'll</p>
-<ul>
-<li>list and describe the data sources for your class project
-<ul>
-<li>provide the data urls</li>
-<li>describe the file formats</li>
-<li>explain the data content of each file</li>
-</ul></li>
-</ul>
-<p><strong>Remark:</strong> If your data is not directly available through the web (for instance, you requested it from a company, or got it from Inna or Henry), place you data into your personal bdrive, and provide a link to it, that you'll use in this notebook to download it into the data folder, as explained below).</p>
-<p>In <strong>code cells</strong>, you'll</p>
-<ul>
-<li><p>create the following directories:</p>
-<pre><code>./data
-./data/raw        # to store your raw data
-./data/cleaned    # to store the cleanned data
-./data/simulated  # to store simulated data
-./visualizations  # to store your plots</code></pre></li>
-<li><p>display samples of your data files (e.g. for a csv files, use data frames and the <code>head</code> method)</p></li>
-<li><p>Write <strong>scripts</strong> into the <code>./script</code> directory using the he <strong>magic command</strong></p>
-<p>%%file ./script/file_name</p></li>
-</ul>
-<p>Your scripts should contain <strong>functions</strong> and <strong>objects</strong> allowing you to</p>
-<ul>
-<li><p>download the actual raw data in the directory <code>./data/raw</code></p></li>
-<li><p>load the downloaded the raw data files into data frames</p></li>
-</ul>
-<p>This way, the functions and objects contained in your scripts will be accessible in other notebooks through the <code>import</code> command in Python (see example below).</p>
-<p><strong>Remark 1:</strong> In the code cells, you may use Python, R, or Bash, as you find more convenient.</p>
-<p><strong>Remark 2:</strong> Try to make your notebook as readable and usable (by others) as possible.</p>
+<h3 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h3>
+<p>We did all the work as a team without specific division of resposibility.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="creating-the-directory-structure">Creating the directory structure</h3>
@@ -2063,7 +2018,11 @@ In&nbsp;[1]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>TO DO:</strong> list sources, display data sample, explain data content, etc.</p>
+<h3 id="Introduction-for-Data-Source">Introduction for Data Source<a class="anchor-link" href="#Introduction-for-Data-Source">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this data source, we choose the &quot;on campus crime data&quot;.This raw dataset contains over 10,000 postsecondary institutions with information about different types of crime and also information regarding the intuitions such as private/public, gender ratio and geographical location. For our interest, we choose the specific file about &quot;on-campus crime&quot; to focus on. The data provided by government website are comprehensive enough, but there are some minor typos that we need to fix when loading the data.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Loading-raw-data-into-data-frames">Loading raw data into data frames<a class="anchor-link" href="#Loading-raw-data-into-data-frames">&#182;</a></h3>
@@ -2072,7 +2031,7 @@ In&nbsp;[1]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[2]:
+In&nbsp;[1]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">load_ext</span> <span class="n">rmagic</span>
@@ -2088,7 +2047,7 @@ In&nbsp;[2]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[3]:
+In&nbsp;[2]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -2102,7 +2061,7 @@ In&nbsp;[3]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[4]:
+In&nbsp;[3]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="n">ls</span> <span class="o">~/</span><span class="n">project2</span><span class="o">/</span><span class="n">stat133</span><span class="o">-</span><span class="n">project2</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">oncampuscrime101112</span><span class="o">.</span><span class="n">xls</span>
@@ -2131,7 +2090,7 @@ In&nbsp;[4]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[5]:
+In&nbsp;[4]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="n">crime_file</span> <span class="o">=</span> <span class="s">&#39;/home/oski/project2/stat133-project2/examples/data/raw/oncampuscrime101112.xls&#39;</span>
@@ -2150,12 +2109,12 @@ In&nbsp;[5]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[6]:
+In&nbsp;[5]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span> <span class="o">-</span><span class="n">i</span> <span class="n">data</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">tail</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -2170,55 +2129,62 @@ In&nbsp;[6]:
 
 
 <pre>
-       UNITID_P                                                         INSTNM
-11058 480523001                           Ross Medical Education Center-Dayton
-11059 480897001                                      UEI Colleges - Santa Cruz
-11060 480903001 New England Tractor Trailer Training School of CT - Bridgeport
-11061 480994001                                 Aspen Beauty Academy of Laurel
-11062 481438001                                        Yeshiva Yesodei Hatorah
-11063 481614001                                        ITT Technical Institute
-           BRANCH               Address       City State       ZIP sector_cd
-11058 Main Campus      4490 Brandt Pike     Dayton    OH     45424         9
-11059 UEI College  3050 Paul Sweet Road Santa Cruz    CA     95065        99
-11060 Main Campus        510 Barnum Ave Bridgeport    CT     06068        99
-11061 Main Campus  3535 Fort Meade Road     Laurel    MD     20724        99
-11062 Main Campus       2 Yesodei Court   Lakewood    NJ 087014946        99
-11063 Main Campus 6913 North 9th Avenue  Pensacola    FL 325046638        99
-                               Sector_desc men_total women_total Total MURD10
-11058 Private for-profit, less-than 2-year         1          92    93    NaN
-11059                      New Institution       NaN         NaN   NaN    NaN
-11060                      New Institution       NaN         NaN   NaN    NaN
-11061                      New Institution       NaN         NaN   NaN    NaN
-11062                      New Institution       NaN         NaN   NaN    NaN
-11063                      New Institution       NaN         NaN   NaN    NaN
-      NEG_M10 FORCIB10 NONFOR10 ROBBE10 AGG_A10 BURGLA10 VEHIC10 ARSON10 MURD11
-11058     NaN      NaN      NaN     NaN     NaN      NaN     NaN     NaN    NaN
-11059     NaN      NaN      NaN     NaN     NaN      NaN     NaN     NaN    NaN
-11060     NaN      NaN      NaN     NaN     NaN      NaN     NaN     NaN    NaN
-11061     NaN      NaN      NaN     NaN     NaN      NaN     NaN     NaN    NaN
-11062     NaN      NaN      NaN     NaN     NaN      NaN     NaN     NaN    NaN
-11063     NaN      NaN      NaN     NaN     NaN      NaN     NaN     NaN    NaN
-      NEG_M11 FORCIB11 NONFOR11 ROBBE11 AGG_A11 BURGLA11 VEHIC11 ARSON11 MURD12
-11058     NaN      NaN      NaN     NaN     NaN      NaN     NaN     NaN      0
-11059     NaN      NaN      NaN     NaN     NaN      NaN     NaN     NaN      0
-11060     NaN      NaN      NaN     NaN     NaN      NaN     NaN     NaN      0
-11061     NaN      NaN      NaN     NaN     NaN      NaN     NaN     NaN      0
-11062     NaN      NaN      NaN     NaN     NaN      NaN     NaN     NaN      0
-11063     NaN      NaN      NaN     NaN     NaN      NaN     NaN     NaN      0
-      NEG_M12 FORCIB12 NONFOR12 ROBBE12 AGG_A12 BURGLA12 VEHIC12 ARSON12
-11058       0        0        0       0       0        0       0       0
-11059       0        0        0       0       0        0       0       0
-11060       0        0        0       0       0        0       0       0
-11061       0        0        0       0       0        0       0       0
-11062       0        0        0       0       0        0       0       0
-11063       0        0        0       0       0        0       0       0
-      FILTER10 FILTER11 FILTER12
-11058        0        0        1
-11059        0        0        1
-11060        0        0        1
-11061        0        0        1
-11062        0        0        1
-11063        0        0        1
+   UNITID_P                              INSTNM
+0 100654001            Alabama A &amp; M University
+1 100663001 University of Alabama at Birmingham
+2 100663002 University of Alabama at Birmingham
+3 100690001                  Amridge University
+4 100706001 University of Alabama in Huntsville
+5 100724001            Alabama State University
+                              BRANCH
+0                        Main Campus
+1                        Main Campus
+2 Huntsville Regional Medical Campus
+3                        Main Campus
+4                        Main Campus
+5                        Main Campus
+                                             Address       City State       ZIP
+0                                   4900 MERIDIAN ST     NORMAL    AL     35762
+1 ADMINISTRATION BLDG SUITE 1070, 701 20th Street So BIRMINGHAM    AL 352940110
+2                             301 Governors Drive SW Huntsville    AL     35801
+3                                     1200 TAYLOR RD MONTGOMERY    AL 361173553
+4                                    301 SPARKMAN DR HUNTSVILLE    AL     35899
+5                               915 SOUTH JACKSON ST MONTGOMERY    AL 361040271
+  sector_cd                        Sector_desc men_total women_total Total
+0         1            Public, 4-year or above      2224        2629  4853
+1         1            Public, 4-year or above      7163       10836 17999
+2         1            Public, 4-year or above      7163       10836 17999
+3         2 Private nonprofit, 4-year or above       321         382   703
+4         1            Public, 4-year or above      4207        3429  7636
+5         1            Public, 4-year or above      2276        3540  5816
+  MURD10 NEG_M10 FORCIB10 NONFOR10 ROBBE10 AGG_A10 BURGLA10 VEHIC10 ARSON10
+0      0       0        5        0       3       5       73       2       1
+1      1       0        1        0       2       0       20       1       1
+2      0       0        0        0       0       0        1       0       0
+3      0       0        0        0       0       0        0       0       0
+4      3       0        0        0       1       3       24       3       0
+5      0       0        0        0       5       1       34       0       0
+  MURD11 NEG_M11 FORCIB11 NONFOR11 ROBBE11 AGG_A11 BURGLA11 VEHIC11 ARSON11
+0      0       0        4        0       1       8       58       2       2
+1      0       0        2        0       2       0       11       5       4
+2      0       0        0        0       0       0        0       0       0
+3      0       0        0        0       0       0        0       0       0
+4      0       0        4        0       1       1       38       2       0
+5      0       0        1        0       0       5       23       2       0
+  MURD12 NEG_M12 FORCIB12 NONFOR12 ROBBE12 AGG_A12 BURGLA12 VEHIC12 ARSON12
+0      0       0        2        0       6       2        3       2       0
+1      0       0        2        0       1       0        5       6       1
+2      0       0        0        0       0       0        0       0       0
+3      0       0        0        0       0       0        0       0       0
+4      0       0        3        0       0       1       22       0       0
+5      0       0        1        0       1       8       45       0       0
+  FILTER10 FILTER11 FILTER12
+0        1        1        1
+1        1        1        1
+2        1        1        1
+3        1        1        1
+4        1        1        1
+5        1        1        1
 
 </pre>
 
@@ -2230,18 +2196,17 @@ In&nbsp;[6]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Check whether we have the right one.</p>
+<p>It is the right one, and the data examples are shown above.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[7]:
+In&nbsp;[6]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
 <span class="k">print</span><span class="p">(</span><span class="n">dim</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">names</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">lapply</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">class</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -2266,132 +2231,6 @@ In&nbsp;[7]:
 [31] &quot;MURD12&quot;      &quot;NEG_M12&quot;     &quot;FORCIB12&quot;    &quot;NONFOR12&quot;    &quot;ROBBE12&quot;    
 [36] &quot;AGG_A12&quot;     &quot;BURGLA12&quot;    &quot;VEHIC12&quot;     &quot;ARSON12&quot;     &quot;FILTER10&quot;   
 [41] &quot;FILTER11&quot;    &quot;FILTER12&quot;   
-$UNITID_P
-[1] &quot;array&quot;
-
-$INSTNM
-[1] &quot;factor&quot;
-
-$BRANCH
-[1] &quot;factor&quot;
-
-$Address
-[1] &quot;factor&quot;
-
-$City
-[1] &quot;factor&quot;
-
-$State
-[1] &quot;factor&quot;
-
-$ZIP
-[1] &quot;factor&quot;
-
-$sector_cd
-[1] &quot;array&quot;
-
-$Sector_desc
-[1] &quot;factor&quot;
-
-$men_total
-[1] &quot;array&quot;
-
-$women_total
-[1] &quot;array&quot;
-
-$Total
-[1] &quot;array&quot;
-
-$MURD10
-[1] &quot;array&quot;
-
-$NEG_M10
-[1] &quot;array&quot;
-
-$FORCIB10
-[1] &quot;array&quot;
-
-$NONFOR10
-[1] &quot;array&quot;
-
-$ROBBE10
-[1] &quot;array&quot;
-
-$AGG_A10
-[1] &quot;array&quot;
-
-$BURGLA10
-[1] &quot;array&quot;
-
-$VEHIC10
-[1] &quot;array&quot;
-
-$ARSON10
-[1] &quot;array&quot;
-
-$MURD11
-[1] &quot;array&quot;
-
-$NEG_M11
-[1] &quot;array&quot;
-
-$FORCIB11
-[1] &quot;array&quot;
-
-$NONFOR11
-[1] &quot;array&quot;
-
-$ROBBE11
-[1] &quot;array&quot;
-
-$AGG_A11
-[1] &quot;array&quot;
-
-$BURGLA11
-[1] &quot;array&quot;
-
-$VEHIC11
-[1] &quot;array&quot;
-
-$ARSON11
-[1] &quot;array&quot;
-
-$MURD12
-[1] &quot;array&quot;
-
-$NEG_M12
-[1] &quot;array&quot;
-
-$FORCIB12
-[1] &quot;array&quot;
-
-$NONFOR12
-[1] &quot;array&quot;
-
-$ROBBE12
-[1] &quot;array&quot;
-
-$AGG_A12
-[1] &quot;array&quot;
-
-$BURGLA12
-[1] &quot;array&quot;
-
-$VEHIC12
-[1] &quot;array&quot;
-
-$ARSON12
-[1] &quot;array&quot;
-
-$FILTER10
-[1] &quot;array&quot;
-
-$FILTER11
-[1] &quot;array&quot;
-
-$FILTER12
-[1] &quot;array&quot;
-
 
 </pre>
 
@@ -2443,19 +2282,6 @@ In&nbsp;[15]:
 </pre>
 </div>
 </div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb">
-</pre></div>
 
 </div>
 </div>

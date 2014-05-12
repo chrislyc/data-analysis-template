@@ -1720,7 +1720,7 @@ init_mathjax();
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Data Analysis"/>
             <meta property="og:url" content="http://chrislyc.github.io/data-analysis-template/nb3.html"/>
-            <meta property="og:description" content="Data Analysis and Visualization¶ In this notebook, you'll perform the actual analysis of the data stored in the directory ./data/cleaned If the data is not ready yet (e.g. the other members of the team in charge of cleaning the data are not done yet), you may want ..."/>
+            <meta property="og:description" content="Data Analysis and Visualization¶ In this notebook, we will perform clustering analysis on the on-campus crime data. Team members responsible for this notebook: We did all the work as a team without specific division of resposibility. Read cleaned data¶ In [1]: %load_ext rmagic In [2]: %%R data <- read.csv('/home ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://chrislyc.github.io/data-analysis-template/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1819,23 +1819,11 @@ Data Analysis Project            </a>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook, you'll perform the actual analysis of the data stored in the directory</p>
-<pre><code>./data/cleaned</code></pre>
-<p>If the data is not ready yet (e.g. the other members of the team in charge of cleaning the data are not done yet), you may want to simulate cleaned data in the form you want them to be in order to perform the analysis. This may also help you data cleaning team to come up with the rigth data frame. If you choose to do so, store your simulated data into the directory</p>
-<pre><code>./data/simulated</code></pre>
-<p>Having performed analysis of simulated data may help you with the analysis of the actual data, since you will be able to notice deviations between the real and simulated data, which may be worth explaining and investigating further.</p>
-<p>The graphics your going to produce as a result of your analysis should be store in the directory:</p>
-<pre><code>./visualization</code></pre>
+<p>In this notebook, we will perform clustering analysis on the on-campus crime data.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h2>
-<p>List the team members contributing to this notebook, along with their responsabilities:</p>
-<ul>
-<li>team member 1 <strong>name</strong>: team member 1 <strong>responsabilities</strong></li>
-<li>team member 2 <strong>name</strong>: team member 2 <strong>responsabilities</strong></li>
-<li>etc.</li>
-</ul>
-<p>I advise you to work at least in pairs for each project notebook, as you did for the homework assignments. Of course, all team members may participate to each notebook.</p>
+<h3 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h3>
+<p>We did all the work as a team without specific division of resposibility.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Read-cleaned-data">Read cleaned data<a class="anchor-link" href="#Read-cleaned-data">&#182;</a></h2>
@@ -1878,7 +1866,6 @@ In&nbsp;[3]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="k">print</span><span class="p">(</span><span class="n">lapply</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">class</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">dim</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></div>
 
@@ -1894,135 +1881,6 @@ In&nbsp;[3]:
 
 
 <pre>
-$X
-[1] &quot;integer&quot;
-
-$UNITID_P
-[1] &quot;integer&quot;
-
-$INSTNM
-[1] &quot;character&quot;
-
-$BRANCH
-[1] &quot;character&quot;
-
-$Address
-[1] &quot;character&quot;
-
-$City
-[1] &quot;character&quot;
-
-$State
-[1] &quot;character&quot;
-
-$ZIP
-[1] &quot;integer&quot;
-
-$sector_cd
-[1] &quot;integer&quot;
-
-$Sector_desc
-[1] &quot;character&quot;
-
-$men_total
-[1] &quot;integer&quot;
-
-$women_total
-[1] &quot;integer&quot;
-
-$Total
-[1] &quot;integer&quot;
-
-$MURD10
-[1] &quot;integer&quot;
-
-$NEG_M10
-[1] &quot;integer&quot;
-
-$FORCIB10
-[1] &quot;integer&quot;
-
-$NONFOR10
-[1] &quot;integer&quot;
-
-$ROBBE10
-[1] &quot;integer&quot;
-
-$AGG_A10
-[1] &quot;integer&quot;
-
-$BURGLA10
-[1] &quot;integer&quot;
-
-$VEHIC10
-[1] &quot;integer&quot;
-
-$ARSON10
-[1] &quot;integer&quot;
-
-$MURD11
-[1] &quot;integer&quot;
-
-$NEG_M11
-[1] &quot;integer&quot;
-
-$FORCIB11
-[1] &quot;integer&quot;
-
-$NONFOR11
-[1] &quot;integer&quot;
-
-$ROBBE11
-[1] &quot;integer&quot;
-
-$AGG_A11
-[1] &quot;integer&quot;
-
-$BURGLA11
-[1] &quot;integer&quot;
-
-$VEHIC11
-[1] &quot;integer&quot;
-
-$ARSON11
-[1] &quot;integer&quot;
-
-$MURD12
-[1] &quot;integer&quot;
-
-$NEG_M12
-[1] &quot;integer&quot;
-
-$FORCIB12
-[1] &quot;integer&quot;
-
-$NONFOR12
-[1] &quot;integer&quot;
-
-$ROBBE12
-[1] &quot;integer&quot;
-
-$AGG_A12
-[1] &quot;integer&quot;
-
-$BURGLA12
-[1] &quot;integer&quot;
-
-$VEHIC12
-[1] &quot;integer&quot;
-
-$ARSON12
-[1] &quot;integer&quot;
-
-$FILTER10
-[1] &quot;integer&quot;
-
-$FILTER11
-[1] &quot;integer&quot;
-
-$FILTER12
-[1] &quot;integer&quot;
-
 [1] 10622    43
 
 </pre>
@@ -2103,7 +1961,7 @@ In&nbsp;[5]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[6]:
+In&nbsp;[5]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -6080,6 +5938,13 @@ GQzwAAAAAElFTkSuQmCC
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>No significant individual differences can be observed among public schools and private school. However, according to means and the distribution of the outliers, we can see that private schools (non-profit) are tended to have more campus security problems.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="By-total-number-of-students-(large-schools-or-small-schools)">By total number of students (large schools or small schools)<a class="anchor-link" href="#By-total-number-of-students-(large-schools-or-small-schools)">&#182;</a></h3>
 </div>
 
@@ -7312,7 +7177,11 @@ AABAGIEFAAAg7AfhP1GIAQVAfAAAAABJRU5ErkJggg==
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Conclusion:......</p>
+<h3 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Among the private schools (profit), we did a deeepr level of analysis. Schools with a smaller number of students are tended to have higher crime rate. Drawing upon this statement, we further explore the schools present in this subsample. We find that a small number of art schools with high-crime rate skew the mean of crime rates of non-profit private schools.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="By-sex-ratio">By sex ratio<a class="anchor-link" href="#By-sex-ratio">&#182;</a></h3>
@@ -8630,7 +8499,11 @@ F+pR6WxoIVtiAAAAAElFTkSuQmCC
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Conclusion:......</p>
+<h3 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Considering sex ratio is variant in different academic displines, we explore whether the sex ratio can be a potential mediator to explain the stated differences between public and private schools. We find that schools with more women have a higher rate of crimes than schools with more men. This might predict that art schools might be more vulnerable to campus crimes.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Clustering-analysis-for-crime-data-(unlabeled)">Clustering analysis for crime data (unlabeled)<a class="anchor-link" href="#Clustering-analysis-for-crime-data-(unlabeled)">&#182;</a></h2>
@@ -8945,7 +8818,7 @@ ABQjYAEAAChGwAIAAFCMgAUAAKDY/wO1UIzGgSNDQQAAAABJRU5ErkJggg==
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>k-means</p>
+<p>We are going to apply k-means clustering method.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -9279,74 +9152,8 @@ AAojYAEAACiMgAUAAKAwAhYAAIDC/j+gR3K2TD3NVgAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[40]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="k">print</span><span class="p">(</span><span class="n">data10</span><span class="err">$</span><span class="n">INSTNM</span><span class="p">[</span><span class="n">data10</span><span class="err">$</span><span class="n">State</span> <span class="o">==</span> <span class="s">&#39;CA&#39;</span> <span class="o">&amp;</span> <span class="n">data10</span><span class="err">$</span><span class="n">BRANCH</span> <span class="o">==</span> <span class="s">&#39;Main Campus&#39;</span><span class="p">][</span><span class="n">fit</span><span class="err">$</span><span class="n">cluster</span><span class="o">==</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
- [1] &quot;American Beauty College&quot;                           
- [2] &quot;American Conservatory Theater&quot;                     
- [3] &quot;Brownson Technical School&quot;                         
- [4] &quot;California State University-Bakersfield&quot;           
- [5] &quot;California Beauty School&quot;                          
- [6] &quot;California Christian College&quot;                      
- [7] &quot;Claremont McKenna College&quot;                         
- [8] &quot;Western Beauty Institute&quot;                          
- [9] &quot;Dell&apos;Arte International School of Physical Theatre&quot;
-[10] &quot;Feather River Community College District&quot;          
-[11] &quot;Franciscan School of Theology&quot;                     
-[12] &quot;Fredrick and Charles Beauty College&quot;               
-[13] &quot;Harvey Mudd College&quot;                               
-[14] &quot;Manchester Beauty College&quot;                         
-[15] &quot;North Adrians Beauty College&quot;                      
-[16] &quot;Pacific School of Religion&quot;                        
-[17] &quot;University of the Pacific&quot;                         
-[18] &quot;Paris Beauty College&quot;                              
-[19] &quot;Pomona College&quot;                                    
-[20] &quot;Scripps College&quot;                                   
-[21] &quot;Shasta Bible College and Graduate School&quot;          
-[22] &quot;Universal College of Beauty Inc-Los Angeles 1&quot;     
-[23] &quot;Stanford University&quot;                               
-[24] &quot;Thanh Le College School of Cosmetology&quot;            
-[25] &quot;Everest College-Anaheim&quot;                           
-[26] &quot;Universal College of Beauty Inc-Los Angeles 2&quot;     
-[27] &quot;Capstone College&quot;                                  
-[28] &quot;Bristol University&quot;                                
-[29] &quot;Virginia Sewing MacHines and School Center&quot;        
-[30] &quot;California Healing Arts College&quot;                   
-[31] &quot;ATI College-Norwalk&quot;                               
-[32] &quot;American Institute of Massage Therapy&quot;             
-[33] &quot;San Joaquin Valley College-Rancho Cordova&quot;         
-[34] &quot;Providence Christian College&quot;                      
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>They are those schools with more crimes.</p>
+<p>Using method of K-means clustering, we classify all the schools in California into two groups by the crime index. No significant results can be directly observed.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -9760,6 +9567,9 @@ In&nbsp;[61]:
 </div>
 </div>
 
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As a result, we classified the available data into three groups by method of k means. More clearly than the previous graph, two outliers are detected as high-crime schools (noted as green dots: Feather River Community College District, Quincy &amp; Providence Chirstian college, Pasadena)</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -10328,9 +10138,6 @@ AAAoRsACAABQjIAFAACg2P8HOKsbKx6aL+UAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>k-means</p>
-</div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
@@ -10703,7 +10510,7 @@ In&nbsp;[47]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Many art/beauty schools</p>
+<p>Many art/beauty schools are found in the group with higher crime ratio.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -11120,6 +10927,9 @@ In&nbsp;[67]:
 </div>
 </div>
 
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Those schools are in the green color. They are located in different city. But most of them have only small numbers of students.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -11656,9 +11466,6 @@ CwAAQDICFgAAgGQELAAAAMn+H3Ws2w25+6wwAAAAAElFTkSuQmCC
 </div>
 
 </div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>k-means</p>
-</div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
@@ -11989,57 +11796,6 @@ AAr7/8ScwmCl/WM4AAAAAElFTkSuQmCC
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[92]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="k">print</span><span class="p">(</span><span class="n">data12</span><span class="err">$</span><span class="n">INSTNM</span><span class="p">[</span><span class="n">data12</span><span class="err">$</span><span class="n">State</span> <span class="o">==</span> <span class="s">&#39;CA&#39;</span> <span class="o">&amp;</span> <span class="n">data12</span><span class="err">$</span><span class="n">BRANCH</span> <span class="o">==</span> <span class="s">&#39;Main Campus&#39;</span><span class="p">][</span><span class="n">fit</span><span class="err">$</span><span class="n">cluster</span><span class="o">==</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
- [1] &quot;California Institute of the Arts&quot;                  
- [2] &quot;Claremont McKenna College&quot;                         
- [3] &quot;Dell&apos;Arte International School of Physical Theatre&quot;
- [4] &quot;Harvey Mudd College&quot;                               
- [5] &quot;Manchester Beauty College&quot;                         
- [6] &quot;Tulare Beauty College&quot;                             
- [7] &quot;Pacific Lutheran Theological Seminary&quot;             
- [8] &quot;University of Redlands&quot;                            
- [9] &quot;William Jessup University&quot;                         
-[10] &quot;Shasta Bible College and Graduate School&quot;          
-[11] &quot;ATI College-Norwalk&quot;                               
-[12] &quot;RWM Fiber Optics&quot;                                  
-[13] &quot;Providence Christian College&quot;                      
-[14] &quot;Galaxy Medical College&quot;                            
-[15] &quot;Annenberg School of Nursing&quot;                       
-[16] &quot;Flair Beauty College&quot;                              
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>many art/beauty schoos</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -12453,9 +12209,6 @@ In&nbsp;[107]:
 </div>
 </div>
 
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Conclusion:......</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -13022,7 +12775,7 @@ AABAMgIWAACAZP8fJ5yaGW3vSp0AAAAASUVORK5CYII=
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>k-means</p>
+<p>Crime index of one means the less severe crime on campus such as stealings and burglaries. Crowded blue dots at the left bottom part of the graph shows that burglary is the most prevalant and common crime type in colleges and universities.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -13178,7 +12931,7 @@ QAABgQACAgEEBAIICAQQEAggIBBAQCCAgEAAwb8BZTMnhXZ/nucAAAAASUVORK5CYII=
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So, we can ...</p>
+<p>The further classification of K-means in the two-dimension senario, schools with more security issues are further defined with both qualitative and quantativive attributes.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -13437,6 +13190,9 @@ AAAAyQhYAAAAkhGwAAAAJPs/JlUjIJILIYIAAAAASUVORK5CYII=
 </div>
 </div>
 
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The schools are further grouped into three groups: low-crime group (red), burglary-intense(blue) and severe-crime(green).</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -13784,7 +13540,7 @@ AABJRU5ErkJggg==
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The k-means clustering method fits <span class="math">\(4\)</span> groups. One for ...</p>
+<p>his is a further classification with 4 groups. The low-crime group is divided into safe (red) and low-crime (blue).</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -14160,9 +13916,6 @@ CwAAQGEELAAAAIURsAAAABT2f1WVnXvIfQ+FAAAAAElFTkSuQmCC
 </div>
 </div>
 
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>k-means</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -14601,6 +14354,9 @@ In&nbsp;[129]:
 </div>
 </div>
 
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>These three universities are marked as having more burglary crime.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -15326,7 +15082,7 @@ AElFTkSuQmCC
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can see that ...</p>
+<p>More schools with higher severe-crime(crime index 2) are grouped as unsafe one.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -15611,6 +15367,9 @@ In&nbsp;[136]:
 </div>
 </div>
 
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The two colleges with much more burglary crime ratio are Shasta Bible College and Providence Christian College. Both of them are religious schools.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -15933,10 +15692,17 @@ In&nbsp;[139]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So in 2012, there are <span class="math">\(347\)</span> colleges are marked as safe schools. By comparing to this number in the year 2010 and 2011, we can see there is a significantly increase, which might indicate that the security of US colleges in CA is done better and better.</p>
+<p>So in 2012, there are <span class="math">\(347\)</span> colleges are marked as safe schools.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Clustering-for-9-Cal-Schools">Clustering for 9 Cal Schools<a class="anchor-link" href="#Clustering-for-9-Cal-Schools">&#182;</a></h2>
+<h3 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By comparing to this number in the year 2010 and 2011, we can see there is a significantly increase, which might indicate that the security of US colleges in CA is done better and better.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Clustering-for-9-UCs">Clustering for 9 UCs<a class="anchor-link" href="#Clustering-for-9-UCs">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16790,7 +16556,7 @@ In&nbsp;[18]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We are in the group of unsafety.</p>
+<p>Method of Hierarchical cluster is used to analyze the safety issue of the ten main campuses of Universitiy of Califonia. For the first step, two groups (safe vs. unsafe) are formed. We are in the group of unsafety.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>K = 4</p>
@@ -20440,6 +20206,13 @@ In&nbsp;[29]:
 <p>University of California-Santa Cruz is the most unsafe group for the year 2012. And we can see that the crime level in UC Berkeley in 2012 is significantly lower than 2010 and 2011. It indicates that we are inproving our campus security level.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>UC Berkeley has a huge progress in on-campus security level in 2012, which is a good sign for us to build a better environment for Berkeley students in the future.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Clustering-by-States">Clustering by States<a class="anchor-link" href="#Clustering-by-States">&#182;</a></h2>
 </div>
 
@@ -20504,7 +20277,7 @@ Loading required package: maps
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[39]:
+In&nbsp;[6]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -20516,60 +20289,6 @@ In&nbsp;[39]:
   <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
 <span class="p">}</span>
 </pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
- [1] &quot;alabama&quot;                         &quot;arizona&quot;                        
- [3] &quot;arkansas&quot;                        &quot;california&quot;                     
- [5] &quot;colorado&quot;                        &quot;connecticut&quot;                    
- [7] &quot;delaware&quot;                        &quot;district of columbia&quot;           
- [9] &quot;florida&quot;                         &quot;georgia&quot;                        
-[11] &quot;idaho&quot;                           &quot;illinois&quot;                       
-[13] &quot;indiana&quot;                         &quot;iowa&quot;                           
-[15] &quot;kansas&quot;                          &quot;kentucky&quot;                       
-[17] &quot;louisiana&quot;                       &quot;maine&quot;                          
-[19] &quot;maryland&quot;                        &quot;massachusetts:martha&apos;s vineyard&quot;
-[21] &quot;massachusetts:main&quot;              &quot;massachusetts:nantucket&quot;        
-[23] &quot;michigan:north&quot;                  &quot;michigan:south&quot;                 
-[25] &quot;minnesota&quot;                       &quot;mississippi&quot;                    
-[27] &quot;missouri&quot;                        &quot;montana&quot;                        
-[29] &quot;nebraska&quot;                        &quot;nevada&quot;                         
-[31] &quot;new hampshire&quot;                   &quot;new jersey&quot;                     
-[33] &quot;new mexico&quot;                      &quot;new york:manhattan&quot;             
-[35] &quot;new york:main&quot;                   &quot;new york:staten island&quot;         
-[37] &quot;new york:long island&quot;            &quot;north carolina:knotts&quot;          
-[39] &quot;north carolina:main&quot;             &quot;north carolina:spit&quot;            
-[41] &quot;north dakota&quot;                    &quot;ohio&quot;                           
-[43] &quot;oklahoma&quot;                        &quot;oregon&quot;                         
-[45] &quot;pennsylvania&quot;                    &quot;rhode island&quot;                   
-[47] &quot;south carolina&quot;                  &quot;south dakota&quot;                   
-[49] &quot;tennessee&quot;                       &quot;texas&quot;                          
-[51] &quot;utah&quot;                            &quot;vermont&quot;                        
-[53] &quot;virginia:chesapeake&quot;             &quot;virginia:chincoteague&quot;          
-[55] &quot;virginia:main&quot;                   &quot;washington:san juan island&quot;     
-[57] &quot;washington:lopez island&quot;         &quot;washington:orcas island&quot;        
-[59] &quot;washington:whidbey island&quot;       &quot;washington:main&quot;                
-[61] &quot;west virginia&quot;                   &quot;wisconsin&quot;                      
-[63] &quot;wyoming&quot;                        
- [1] &quot;AK&quot; &quot;AL&quot; &quot;AR&quot; &quot;AZ&quot; &quot;CA&quot; &quot;CO&quot; &quot;CT&quot; &quot;DC&quot; &quot;DE&quot; &quot;FL&quot; &quot;GA&quot; &quot;HI&quot; &quot;IA&quot; &quot;ID&quot; &quot;IL&quot;
-[16] &quot;IN&quot; &quot;KS&quot; &quot;KY&quot; &quot;LA&quot; &quot;MA&quot; &quot;MD&quot; &quot;ME&quot; &quot;MI&quot; &quot;MN&quot; &quot;MO&quot; &quot;MS&quot; &quot;MT&quot; &quot;NC&quot; &quot;ND&quot; &quot;NE&quot;
-[31] &quot;NH&quot; &quot;NJ&quot; &quot;NM&quot; &quot;NV&quot; &quot;NY&quot; &quot;OH&quot; &quot;OK&quot; &quot;OR&quot; &quot;PA&quot; &quot;RI&quot; &quot;SC&quot; &quot;SD&quot; &quot;TN&quot; &quot;TX&quot; &quot;UT&quot;
-[46] &quot;VA&quot; &quot;VT&quot; &quot;WA&quot; &quot;WI&quot; &quot;WV&quot; &quot;WY&quot;
-
-</pre>
-
-</div>
-</div>
 
 </div>
 </div>
@@ -21677,7 +21396,7 @@ ggUAMBMsAICZYAEAzAQLAGAmWAAAM8ECAJgJFgDATLAAAGYB8vIIEq9vrzQAAAAASUVORK5CYII=
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can see ...</p>
+<p>We can see that universities in Missouri state and Conneticut state did the worst job on campus security. However, Universities in California state and Florida state did the best.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Year-2011">Year 2011<a class="anchor-link" href="#Year-2011">&#182;</a></h3>
@@ -22784,7 +22503,7 @@ FgJ6ux3eOgAxAAAAAElFTkSuQmCC
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>By comparing to the map for 2010, ...</p>
+<p>By comparing to the map for 2010, Missouri is getting better, and also the south part is better than north part generally.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Year-2012">Year 2012<a class="anchor-link" href="#Year-2012">&#182;</a></h3>
@@ -23891,7 +23610,11 @@ ggUAMBMsAICZYAEAzAQLAGAmWAAAM8ECAJgJFgDATLAAAGYB8vIIEq9vrzQAAAAASUVORK5CYII=
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h3>
+</div>
 
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For the year 2012, it is similar to 2010. Universities in California still did the best job. We can see that on-campus crime is not only correlated to the security level but also dependent on universities' security. So the map just shows the crime ratio for schools, it might not be the same as crime ratio for states in general.</p>
 </div></p>
             </div>
             <!-- /.entry-content -->

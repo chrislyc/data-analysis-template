@@ -1720,7 +1720,7 @@ init_mathjax();
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Data Cleaning"/>
             <meta property="og:url" content="http://chrislyc.github.io/data-analysis-template/nb2.html"/>
-            <meta property="og:description" content="Data Cleaning¶ In this notebook, you'll load the raw data into R or Pandas dataframe from the ./data/raw directory using the functions and classes (written during the data gathering phase) in the ./script directory perform visual exploration on your data variables to detect anomalies, errors, outliers, interesting features ..."/>
+            <meta property="og:description" content="Data Cleaning¶ In this notebook, we load our raw data into R. Then we clean missing values and check for outliers. Team members responsible for this notebook: We did all the work as a team without specific division of resposibility. Loading data¶ In [1]: %%bash pwd /home/oski/project2/stat133-project2 ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://chrislyc.github.io/data-analysis-template/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1819,24 +1819,11 @@ Data Analysis Project            </a>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook, you'll</p>
-<ul>
-<li><p><strong>load the raw data into R or Pandas dataframe</strong> from the <code>./data/raw</code> directory using the functions and classes (written during the data gathering phase) in the <code>./script</code> directory</p></li>
-<li><p><strong>perform visual exploration</strong> on your data variables to detect anomalies, errors, outliers, interesting features etc.</p></li>
-<li><p><strong>clean categorical and quantitative variables</strong> (by removing observations and variables with too many missing values, by consolidating categorical variables, by selecting an appropriate subset of variables and observations for later analysis, etc.)</p></li>
-<li><p><strong>save the cleaned data</strong> into csv files in the <code>./data/cleaned</code> directory</p></li>
-<li><p><strong>save interesting graphics</strong> you obtained during visual exploration into the <code>./visualiation</code> directory</p></li>
-</ul>
+<p>In this notebook, we load our raw data into R. Then we clean missing values and check for outliers.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h2>
-<p>List the team members contributing to this notebook, along with their responsabilities:</p>
-<ul>
-<li>team member 1 <strong>name</strong>: team member 1 <strong>responsabilities</strong></li>
-<li>team member 2 <strong>name</strong>: team member 2 <strong>responsabilities</strong></li>
-<li>etc.</li>
-</ul>
-<p>I advise you to work at least in pairs for each project notebook, as you did for the homework assignments. Of course, all team members may participate to each notebook.</p>
+<h3 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h3>
+<p>We did all the work as a team without specific division of resposibility.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Loading-data">Loading data<a class="anchor-link" href="#Loading-data">&#182;</a></h2>
@@ -1907,7 +1894,6 @@ In&nbsp;[4]:
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span> <span class="o">-</span><span class="n">d</span> <span class="n">data</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">lapply</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">class</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">dim</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></div>
 
@@ -1923,135 +1909,6 @@ In&nbsp;[4]:
 
 
 <pre>
-$X
-[1] &quot;integer&quot;
-
-$UNITID_P
-[1] &quot;integer&quot;
-
-$INSTNM
-[1] &quot;character&quot;
-
-$BRANCH
-[1] &quot;character&quot;
-
-$Address
-[1] &quot;character&quot;
-
-$City
-[1] &quot;character&quot;
-
-$State
-[1] &quot;character&quot;
-
-$ZIP
-[1] &quot;character&quot;
-
-$sector_cd
-[1] &quot;integer&quot;
-
-$Sector_desc
-[1] &quot;character&quot;
-
-$men_total
-[1] &quot;integer&quot;
-
-$women_total
-[1] &quot;integer&quot;
-
-$Total
-[1] &quot;integer&quot;
-
-$MURD10
-[1] &quot;integer&quot;
-
-$NEG_M10
-[1] &quot;integer&quot;
-
-$FORCIB10
-[1] &quot;integer&quot;
-
-$NONFOR10
-[1] &quot;integer&quot;
-
-$ROBBE10
-[1] &quot;integer&quot;
-
-$AGG_A10
-[1] &quot;integer&quot;
-
-$BURGLA10
-[1] &quot;integer&quot;
-
-$VEHIC10
-[1] &quot;integer&quot;
-
-$ARSON10
-[1] &quot;integer&quot;
-
-$MURD11
-[1] &quot;integer&quot;
-
-$NEG_M11
-[1] &quot;integer&quot;
-
-$FORCIB11
-[1] &quot;integer&quot;
-
-$NONFOR11
-[1] &quot;integer&quot;
-
-$ROBBE11
-[1] &quot;integer&quot;
-
-$AGG_A11
-[1] &quot;integer&quot;
-
-$BURGLA11
-[1] &quot;integer&quot;
-
-$VEHIC11
-[1] &quot;integer&quot;
-
-$ARSON11
-[1] &quot;integer&quot;
-
-$MURD12
-[1] &quot;integer&quot;
-
-$NEG_M12
-[1] &quot;integer&quot;
-
-$FORCIB12
-[1] &quot;integer&quot;
-
-$NONFOR12
-[1] &quot;integer&quot;
-
-$ROBBE12
-[1] &quot;integer&quot;
-
-$AGG_A12
-[1] &quot;integer&quot;
-
-$BURGLA12
-[1] &quot;integer&quot;
-
-$VEHIC12
-[1] &quot;integer&quot;
-
-$ARSON12
-[1] &quot;integer&quot;
-
-$FILTER10
-[1] &quot;integer&quot;
-
-$FILTER11
-[1] &quot;integer&quot;
-
-$FILTER12
-[1] &quot;integer&quot;
-
 [1] 11064    43
 
 </pre>
@@ -2157,12 +2014,15 @@ In&nbsp;[6]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We do have some missing data. We are going to clean our data for each column.</p>
+<p>We do have some missing data. We are going to clean our data by each column.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="School-ID">School ID<a class="anchor-link" href="#School-ID">&#182;</a></h3>
 </div>
 
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First of all, we take a look at school ID.</p>
+</div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
@@ -2484,7 +2344,7 @@ BwVTDgqmHBRMOSiYclAw5aBgykHBlIOCKQcFUw4Kppz/B8qqAy0D+iKUAAAAAElFTkSuQmCC
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There is a gap.</p>
+<p>There is a gap for some reason.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Institution-name">Institution name<a class="anchor-link" href="#Institution-name">&#182;</a></h3>
@@ -2536,12 +2396,13 @@ integer(0)
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[9]:
+In&nbsp;[5]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
 <span class="k">print</span><span class="p">(</span><span class="n">grep</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\\</span><span class="s">&quot;&#39;</span><span class="p">,</span><span class="n">data</span><span class="err">$</span><span class="n">Address</span><span class="p">))</span>
 <span class="n">typo</span> <span class="o">&lt;-</span> <span class="n">grep</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\\</span><span class="s">&quot;&#39;</span><span class="p">,</span><span class="n">data</span><span class="err">$</span><span class="n">Address</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="err">$</span><span class="n">Address</span><span class="p">[</span><span class="n">typo</span><span class="p">])</span>
 <span class="n">newAddress</span> <span class="o">&lt;-</span> <span class="n">gsub</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\\</span><span class="s">&quot;&#39;</span><span class="p">,</span><span class="s">&#39;</span><span class="se">\&#39;</span><span class="s">&#39;</span><span class="p">,</span><span class="n">data</span><span class="err">$</span><span class="n">Address</span><span class="p">[</span><span class="n">typo</span><span class="p">])</span>
 <span class="n">data</span><span class="err">$</span><span class="n">Address</span><span class="p">[</span><span class="n">typo</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">newAddress</span>
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="err">$</span><span class="n">Address</span><span class="p">[</span><span class="n">typo</span><span class="p">])</span>
@@ -2560,6 +2421,7 @@ In&nbsp;[9]:
 
 <pre>
 [1] 4359
+[1] &quot;1600 ST. Michales\&quot;s Drive&quot;
 [1] &quot;1600 ST. Michales&apos;s Drive&quot;
 
 </pre>
@@ -2789,6 +2651,9 @@ sector ID 99 : New Institution
 </div>
 </div>
 
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are 11 types ofr institutions in the US. But we will focus on general ones which are types 1-9.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Number-of-Students">Number of Students<a class="anchor-link" href="#Number-of-Students">&#182;</a></h3>
@@ -3690,7 +3555,7 @@ In&nbsp;[26]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The number of total students in Shimer College is only 112, but there are more than 30 robberies in 2012. However, from the google map...</p>
+<p>The number of total students in Shimer College is only 112, but there are more than 30 robberies in 2012.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Aggravated-Assault">Aggravated Assault<a class="anchor-link" href="#Aggravated-Assault">&#182;</a></h3>
@@ -3883,9 +3748,6 @@ In&nbsp;[28]:
 </div>
 </div>
 
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>So we can ...</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Burglary">Burglary<a class="anchor-link" href="#Burglary">&#182;</a></h3>
@@ -4096,9 +3958,6 @@ In&nbsp;[30]:
 </div>
 </div>
 
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>So we can ...</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Motor-Vehicle-Theft">Motor Vehicle Theft<a class="anchor-link" href="#Motor-Vehicle-Theft">&#182;</a></h3>
@@ -4438,7 +4297,11 @@ Yob9agX+XQcAAAAASUVORK5CYII=
 <p>We don't see any significant outliers.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Write the cleaned data out as a .csv file.</p>
+<h3 id="Output-Data">Output Data<a class="anchor-link" href="#Output-Data">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After cleaning all the missing values and investigate all the quantitative variables, we need to write the cleaned data out as a .csv file.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -4448,19 +4311,6 @@ In&nbsp;[34]:
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
 <span class="n">write</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&#39;/home/oski/project2/stat133-project2/examples/data/cleaned/oncampuscrime_cleaned.csv&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb">
 </pre></div>
 
 </div>

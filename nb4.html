@@ -1720,7 +1720,7 @@ init_mathjax();
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Project Report"/>
             <meta property="og:url" content="http://chrislyc.github.io/data-analysis-template/nb4.html"/>
-            <meta property="og:description" content="Project Report¶ In this notebook, you'll sumarize your finding for the class presentation. The class presentation will use this notebook in slide mode, as I do during lecture time. You'll need to download the following zip file, unzip it, and run the following notebook install-support.ipynb to install ..."/>
+            <meta property="og:description" content="Campus Crime Data Analysis - Project Report¶ In this notebook, we'll sumarize our finding for the presentation. Problems¶ Our analysis of campus security data through 2010-2012 is based on raw data from the U.S. Department of Education. The main question we will address is the relationship between various campus ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://chrislyc.github.io/data-analysis-template/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1815,27 +1815,11 @@ Data Analysis Project            </a>
                 </div>
                 <p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Project-Report">Project Report<a class="anchor-link" href="#Project-Report">&#182;</a></h1>
+<h1 id="Campus-Crime-Data-Analysis---Project-Report">Campus Crime Data Analysis - Project Report<a class="anchor-link" href="#Campus-Crime-Data-Analysis---Project-Report">&#182;</a></h1>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook, you'll sumarize your finding for the class presentation.</p>
-<p>The class presentation will use this notebook in slide mode, as I do during lecture time.</p>
-<p>You'll need to download the following <a href="https://github.com/fperez/nb-slideshow-template/archive/master.zip">zip file</a>, unzip it, and run the following notebook <code>install-support.ipynb</code> to install the slide capabilities.</p>
-<p>The notebook <code>notebook-slideshow-example.ipynb</code> will give you examples on how to use slides within the iPython notebook.</p>
-<p>You should also write this notebook so that you can convert it nicely into a pdf document using the commands</p>
-<pre><code>ipython nbconvert NB4_report.pynb --to latex
-pdflatex NB4_report.tex</code></pre>
-<p>See <a href="http://ipython.org/ipython-doc/rel-1.0.0/interactive/nbconvert.html">here</a> for further references on how to do that.</p>
-<p>In this notebook, you'll</p>
-<ul>
-<li><p>describe your problem as stated in the propectus</p></li>
-<li><p>comment on your data sources, on their format, on the difficulties to get them</p></li>
-<li><p>present the main challenge you encountered</p></li>
-<li><p>present your finding in the form of expresive graphics</p></li>
-</ul>
-<p>Be sure to include an introduction section motivating your visualizations, with a description of the substantive context and why it is interesting.</p>
-<p>Cite the source of the data and any other references that you used in carrying out your project.</p>
+<p>In this notebook, we'll sumarize our finding for the presentation.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Problems">Problems<a class="anchor-link" href="#Problems">&#182;</a></h2>
@@ -3227,135 +3211,6 @@ UxAATUEANAUB0BQEQFMQAE1BADQFAf4f4askZ9vytbgAAAAASUVORK5CYII=
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Using method of K-means clustering, we classify all the schools in California into two groups by the crime index. No significant results can be directly observed.</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[23]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">&#39;/home/oski/project2/stat133-project2/examples/data/visualization/clustering_ca2.png&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[23]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<img src="data:image/png;base64,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
-">
-
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">

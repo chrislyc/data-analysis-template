@@ -1792,13 +1792,18 @@ Data Analysis Project            </a>
                 <h2><a href="http://chrislyc.github.io/data-analysis-template/nb4.html">Project Report</a></h2>
                 <div class="summary"><p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Project-Report">Project Report<a class="anchor-link" href="#Project-Report">&#182;</a></h1>
+<h1 id="Campus-Crime-Data-Analysis---Project-Report">Campus Crime Data Analysis - Project Report<a class="anchor-link" href="#Campus-Crime-Data-Analysis---Project-Report">&#182;</a></h1>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook, you'll sumarize your finding for the class presentation.</p>
-<p>The class presentation will use this notebook in slide mode, as I do during lecture time.</p>
-<p>You'll need to download the following <a href="https://github.com/fperez/nb-slideshow-template/archive/master.zip">zip file</a>, unzip it, and run the following notebook <code>install-support.ipynb</code> to install ...</p></div></p>
+<p>In this notebook, we'll sumarize our finding for the presentation.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problems">Problems<a class="anchor-link" href="#Problems">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Our analysis of campus security data through 2010-2012 is based on raw data from the U.S. Department of Education. The main question we will address is the relationship between various campus ...</p></div></p>
                     <a class="btn btn-default btn-xs" href="http://chrislyc.github.io/data-analysis-template/nb4.html">more ...</a>
                 </div>
             </article>
@@ -1811,9 +1816,37 @@ Data Analysis Project            </a>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook, you'll perform the actual analysis of the data stored in the directory</p>
-<pre><code>./data/cleaned</code></pre>
-<p>If the data is not ready yet (e.g. the other members of the team in charge of cleaning the data are not done yet), you may want ...</p></div></p>
+<p>In this notebook, we will perform clustering analysis on the on-campus crime data.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h3>
+<p>We did all the work as a team without specific division of resposibility.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Read-cleaned-data">Read cleaned data<a class="anchor-link" href="#Read-cleaned-data">&#182;</a></h2>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">load_ext</span> <span class="n">rmagic</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[2]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">data</span> <span class="o">&lt;-</span> <span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s">&#39;/home ...</span></pre></div></div></div></div></p>
                     <a class="btn btn-default btn-xs" href="http://chrislyc.github.io/data-analysis-template/nb3.html">more ...</a>
                 </div>
             </article>
@@ -1826,10 +1859,37 @@ Data Analysis Project            </a>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook, you'll</p>
-<ul>
-<li><p><strong>load the raw data into R or Pandas dataframe</strong> from the <code>./data/raw</code> directory using the functions and classes (written during the data gathering phase) in the <code>./script</code> directory</p></li>
-<li><p><strong>perform visual exploration</strong> on your data variables to detect anomalies, errors, outliers, interesting features ...</p></li></ul></div></p>
+<p>In this notebook, we load our raw data into R. Then we clean missing values and check for outliers.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h3>
+<p>We did all the work as a team without specific division of resposibility.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Loading-data">Loading data<a class="anchor-link" href="#Loading-data">&#182;</a></h2>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">bash</span>
+<span class="n">pwd</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+/home/oski/project2/stat133-project2 ...</pre></div></div></div></div></div></p>
                     <a class="btn btn-default btn-xs" href="http://chrislyc.github.io/data-analysis-template/nb2.html">more ...</a>
                 </div>
             </article>
@@ -1842,17 +1902,11 @@ Data Analysis Project            </a>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook, you'll</p>
-<ul>
-<li>create the directory structure for your project</li>
-<li>download the raw data for your project</li>
-<li><strong>write functions and classes to transform raw data (e.g in XML, jason, etc.) into data frames</strong></li>
-<li>explain what your are doing</li>
-</ul>
+<p>In this notebook, we will download our data from US department of education and load the excel format data into python. Then we write out our data as .csv format.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h2>
-<p>List ...</p></div></p>
+<h3 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h3>
+<p>We did all the work as a team without specific division of ...</p></div></p>
                     <a class="btn btn-default btn-xs" href="http://chrislyc.github.io/data-analysis-template/nb1.html">more ...</a>
                 </div>
             </article>
